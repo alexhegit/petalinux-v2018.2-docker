@@ -32,6 +32,10 @@ Install and Run petalinux-v2018.2 by docker
 ## Build the container base on the Dockerfile
 1. change to DIR 
 2. build the container from Dockerfile
+
+**NOTE**
+You may need modify the proxy settings in Dockerfile according to your enviroment.
+
 ```
 e.g.
 $sudo docker build ./ --network=host --build-arg version=2018.2 --build-arg date_created=1110 -t petalinux-182-ubuntu:test
