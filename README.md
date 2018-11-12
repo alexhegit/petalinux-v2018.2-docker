@@ -9,15 +9,26 @@ Install and Run petalinux-v2018.2 by docker
   The file tree looks like 
   .
   ├── build_docker.sh
+  
   ├── docker_run_plnx_182.sh
+  
   ├── petalinux-182-docker-ubuntu
+  
   │   ├── default.env
+  
   │   ├── Dockerfile
+  
   │   ├── File-Tail-1.3.tar.gz
+  
   │   ├── petalinux-v2018.2
+  
   │   ├── petalinux-v2018.2_bsps
+  
   │   └── plnx_installer.pl
+  
   └── README.md
+
+
 
 2. Download petalinux v2018.2 install file(petalinux-v2018.2-final-installer.run) from https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html to <start_dir>/petalinux-182-docker-ubuntu/petalinux-v2018.2/
 
