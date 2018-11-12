@@ -7,7 +7,9 @@ Install and Run petalinux-v2018.2 by docker
   $git clone https://github.com/alexhegit/petalinux-v2018.2-docker
   $cd <start_dir>/petalinux-v2018.2-docker
   The file tree looks like 
-  .
+ 
+ .
+ 
   ├── build_docker.sh
   
   ├── docker_run_plnx_182.sh
