@@ -32,13 +32,16 @@ Install and Run petalinux-v2018.2 by docker
 ## Build the container base on the Dockerfile
 1. change to DIR 
 2. build the container from Dockerfile
+```
 e.g.
 $sudo docker build ./ --network=host --build-arg version=2018.2 --build-arg date_created=1110 -t petalinux-182-ubuntu:test
 build_docker.sh is a example for you.
-
+```
 ## Start the container
+```
 e.g.
 $sudo docker run --name petalinux-2018.2 --user=plnx_user  --entrypoint=/bin/bash -it -v /home/ahe/PLNX_WS/:/home/plnx_user/PLNX_WS petalinux-182-ubuntu:test
+```
 The example mount the /home/ahe/PLNX_WS/ from HOST to /home/plnx_user/PLNX_WS/
 
 ## Create a project in container
