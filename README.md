@@ -82,5 +82,12 @@ If your porject is for Zynq, it should be /home/plnx_user/PLNX_WS/sstate-rel-v20
 petalinux-config -> Yocto-Settings -> Add pre-mirror url -->
 Enter with file://<path of source>   
 e.g. here is /home/plnx_user/PLNX_WS/sstate-rel-v2018.2/downloads/
-  
+
+### Disable Network sstate feeds (optional)
+Deselect petalinux-config-->Yocto-Settings-->Enable Network sstate feeds
+
+### Force do fetching from local (optional)
+Select petalinux-config-->Yocto-Settings--> Enable BB NO NETWORK
+
+
 Then you can build the project with local sstate_cache and source mirrors. More details of these settings are in UG1144.
