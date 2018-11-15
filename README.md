@@ -12,9 +12,9 @@ Install and Run petalinux-v2018.2 by docker
   The file tree looks like 
  ```
  .
-  ├── build_docker.sh
   ├── docker_run_plnx_182.sh
   ├── petalinux-182-docker-ubuntu
+  │   ├── build_docker.sh
   │   ├── default.env
   │   ├── Dockerfile
   │   ├── File-Tail-1.3.tar.gz
