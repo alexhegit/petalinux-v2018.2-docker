@@ -51,3 +51,36 @@ The example mount the /home/ahe/PLNX_WS/ from HOST to /home/plnx_user/PLNX_WS/
 ## Create a project in container
 Then you can use petalinux-v2018.2 to build a petalinux project. 
 Please refer to UG1144 and UG1157 from www.xilinx.com for using petalinux.
+
+## Enalbe local sstate-cache
+As you know, petalinux is base on Yocto. You can speed up the building process by using sstate-cache. Petalinux use online sstae-cache as default setting. To avoid the unstable network connection, you download the sstate-cache from  https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html and put the DIR mounted by the container. As this example, unzip the sstate_cache.tar.gz and put it into /home/ahe/PLNX_WS/ at host side and you can get it bellow /home/plnx_user/PLNX_WS/
+
+The dir tree looks like bellow.
+```
+/home/ahe/PLNX_WS/sstate-rel-v2018.2/
+├── aarch64
+├── arm
+├── downloads
+├── file
+├── filelist.txt
+├── mb-full
+├── mb-lite
+├── output_arm_univ_tgz.txt
+├── output_mbfull_univ_tgz.txt
+└── output_mblite_univ_tgz.txt
+```
+- The *aarch64* is for Zynq MPSoC and *arm* is for Zynq SoC. 
+- The *download* is the source code package
+
+### Set local sstate_cache
+run petalinux-config to get the settings through petalinux-config-->Yocto-Settings-->Local sstate feeds
+settings and enter the full path of the sstate directory. 
+As this example for zcu102(Zynq MPSoC), the sstate directory should be /home/plnx_user/PLNX_WS/sstate-rel-v2018.2/aarch64/
+If your porject is for Zynq, it should be /home/plnx_user/PLNX_WS/sstate-rel-v2018.2/arm/.
+
+### Set local source mirrors
+petalinux-config -> Yocto-Settings -> Add pre-mirror url -->
+Enter with file://<path of source>   
+e.g. here is /home/plnx_user/PLNX_WS/sstate-rel-v2018.2/downloads/
+  
+Then you can build the project with local sstate_cache and source mirrors. More details of these settings are in UG1144.
